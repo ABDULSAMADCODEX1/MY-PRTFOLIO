@@ -6,7 +6,9 @@
     <title>Abdul Samad | Portfolio</title>
 <link rel="icon" type="image" href="abdulsamad5.png">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     
     <style>
         /* === CONFIGURATION & CSS VARIABLES === */
@@ -53,10 +55,6 @@
             /* Prevent Google Translate from pushing layout down */
             top: 0 !important; 
         }
-
-        /* Hide Google Translate top banner */
-        .skiptranslate iframe { display: none !important; }
-        body { top: 0px !important; }
 
         /* === CUSTOM CURSOR & GLOW === */
         .custom-cursor {
@@ -109,18 +107,6 @@
         .nav-links { list-style: none; display: flex; gap: 2rem; }
         .nav-links a { text-decoration: none; color: var(--text-main); font-weight: 500; transition: color var(--transition-speed); }
         .nav-links a:hover { color: var(--accent); }
-
-        /* Google Translate Wrapper */
-        .translate-wrapper {
-            background: var(--bg-secondary);
-            border: 1px solid var(--accent);
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-        }
-        .goog-te-gadget { font-family: var(--font-body) !important; color: transparent !important; padding: 2px; }
-        .goog-te-gadget .goog-te-combo { margin: 0; padding: 5px; background: var(--bg-main); color: var(--text-main); border: none; border-radius: 6px; outline: none; cursor: pointer; }
 
         .theme-toggle-btn {
             background: transparent; border: 1px solid var(--accent);
@@ -202,6 +188,29 @@
         /* === 4. CONTACT PAGE === */
         .contact-links { display: flex; flex-direction: column; gap: 1.2rem; margin-top: 3rem; align-items: flex-start; width: 100%; }
 
+        /* === FOOTER === */
+        footer {
+            background: var(--bg-secondary);
+            padding: 3rem 2rem 2rem;
+            text-align: center;
+            border-top: 1px solid var(--accent-muted);
+        }
+        .footer-content { max-width: 1200px; margin: 0 auto; }
+        .social-links { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 1.5rem; }
+        .social-links a {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 40px; height: 40px; border-radius: 50%;
+            background: var(--bg-main); color: var(--text-main);
+            border: 1px solid var(--accent-muted);
+            transition: all 0.3s ease;
+        }
+        .social-links a:hover {
+            background: var(--accent); color: #ffffff;
+            transform: translateY(-3px);
+            box-shadow: 0 0 10px var(--accent-glow);
+        }
+        .copyright { color: var(--text-muted); font-size: 0.9rem; }
+
         /* === CHATBOT WIDGET === */
         .chat-widget-btn {
             position: fixed; bottom: 30px; right: 30px;
@@ -249,7 +258,7 @@
 
         /* === RESPONSIVE STYLES === */
         @media (max-width: 968px) {
-            .nav-links, .translate-wrapper { display: none; }
+            .nav-links { display: none; }
             .menu-toggle { display: block; }
             .nav-links.mobile-active { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background: var(--bg-main); border-bottom: 1px solid var(--accent-muted); padding: 2rem; gap: 1.5rem; text-align: center; }
             .split-layout { flex-direction: column; text-align: center; gap: 3rem; }
@@ -278,7 +287,6 @@
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <div class="translate-wrapper" id="google_translate_element"></div>
             
             <button class="theme-toggle-btn" id="theme-toggle">
                 <i class="fa-solid fa-moon"></i> <span>Theme</span>
@@ -303,7 +311,7 @@
                 </div>
             </div>
             <div class="image-side">
-                <img src="abdulsamad1.png" alt="Abdul Samad Profile Image" class="section-hero-img">
+                <img src="abdulsamad3.png" alt="Abdul Samad Profile Image" class="section-hero-img">
             </div>
         </div>
     </section>
@@ -331,7 +339,7 @@
                     </div>
                 </div>
                 <div class="image-side">
-                    <img src="abdulsamad2.png" alt="About Section Illustration" class="section-hero-img">
+                    <img src="abdulsamad1.png" alt="About Section Illustration" class="section-hero-img">
                 </div>
             </div>
         </div>
@@ -342,7 +350,7 @@
             <h2 class="section-title">Skills & Expertise</h2>
             <div class="split-layout" style="margin-bottom: 6rem;">
                 <div class="image-side">
-                    <img src="abdulsamad3.png" alt="Skills Section Illustration" class="section-hero-img">
+                    <img src="abdulsamad2.png" alt="Skills Section Illustration" class="section-hero-img">
                 </div>
                 <div class="content-side skills-section-wrapper">
                     <h3 style="margin-bottom: 1rem;"><i class="fa-solid fa-layer-group"></i> Tech Stack</h3>
@@ -389,11 +397,23 @@
                     </div>
                 </div>
                 <div class="image-side">
-                    <img src="abdulsamad3.png" alt="Contact Section Illustration" class="section-hero-img">
+                    <img src="abdulsamd4.png" alt="Contact Section Illustration" class="section-hero-img">
                 </div>
             </div>
         </div>
     </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="https://github.com/ABDULSAMADCODEX" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="mailto:abdulsamadit12@gmail.com"><i class="fas fa-envelope"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p class="copyright">© 2026 Abdul Samad. All rights reserved.</p>
+        </div>
+    </footer>
 
     <div class="chat-widget-btn" id="chat-btn"><i class="fa-solid fa-comment-dots"></i></div>
     
@@ -410,13 +430,6 @@
             <button class="chat-send-btn" id="chat-send"><i class="fa-solid fa-paper-plane"></i></button>
         </div>
     </div>
-
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-        }
-    </script>
-    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
     <script>
         // --- CUSTOM CURSOR & GLOW ---
@@ -522,3 +535,4 @@
     </script>
 </body>
 </html>
+
